@@ -10,10 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_104315) do
+ActiveRecord::Schema.define(version: 2021_05_24_134459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bets", force: :cascade do |t|
+    t.bigint "horse_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "race_id", null: false
+    t.float "sip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["horse_id"], name: "index_bets_on_horse_id"
+    t.index ["race_id"], name: "index_bets_on_race_id"
+    t.index ["user_id"], name: "index_bets_on_user_id"
+  end
+
+  create_table "horses", force: :cascade do |t|
+    t.string "name"
+    t.float "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_invitations_on_room_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "share_link"
+    t.bigint "race_id", null: false
+    t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["race_id"], name: "index_rooms_on_race_id"
+  end
+
+  create_table "runnings", force: :cascade do |t|
+    t.bigint "horse_id", null: false
+    t.bigint "race_id", null: false
+    t.integer "position"
+    t.float "speed"
+    t.float "acceleration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["horse_id"], name: "index_runnings_on_horse_id"
+    t.index ["race_id"], name: "index_runnings_on_race_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +81,12 @@ ActiveRecord::Schema.define(version: 2021_05_24_104315) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bets", "horses"
+  add_foreign_key "bets", "races"
+  add_foreign_key "bets", "users"
+  add_foreign_key "invitations", "rooms"
+  add_foreign_key "invitations", "users"
+  add_foreign_key "rooms", "races"
+  add_foreign_key "runnings", "horses"
+  add_foreign_key "runnings", "races"
 end
