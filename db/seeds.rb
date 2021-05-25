@@ -22,8 +22,8 @@ puts "horse destroy"
 
 
 puts 'Create user'
-  u1 = User.create!(email: 'had@gmail.com', password: '123456', username: "nico")
-  u2 = User.create!(email: 'nico@gmail.com', password: '123456', username: "had")
+  u1 = User.create!(email: 'had@gmail.com', password: '123456', username: "had")
+  u2 = User.create!(email: 'nico@gmail.com', password: '123456', username: "nico")
 puts 'Done'
 
 puts 'Create horses'
