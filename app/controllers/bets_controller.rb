@@ -2,12 +2,19 @@ class BetsController < ApplicationController
   def new
 
   end
-  def create
 
+  def create
+   if bet_find()
+    update
+   else
+    create
+   end
   end
+
   def edit
 
   end
+
   def update
 
   end
