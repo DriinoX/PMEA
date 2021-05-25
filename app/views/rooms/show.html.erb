@@ -1,22 +1,26 @@
-<div class="container">
-  <p class="lead">
-    <%= link_to 'retourner au menu', root_path, class:"btn btn-primary" %>
-  </p>
+<div class= "jumbotron text-center">
+  <div class="container">
+    <p class="lead">
+      <%= link_to 'retourner au menu', root_path, class:"btn btn-primary" %>
+    </p>
 
-    <h1>PMEA</h1>
-    <h2> Copie ce code pour accèder à une partie de  <strong>PMEA</strong>!</h2>
-    <p>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</p>
+      <h1>PMEA</h1>
+      <h2> Copie ce code pour accèder à une partie de  <strong>PMEA</strong>!</h2>
+      <p>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</p>
 
-    <div class="f p-4 mt-4">
-    <h3>liste des Joueurs</h3>
+      <div class="f p-4 mt-4">
+      <h3>liste des Joueurs</h3>
 
-      <% @users.each do |user|%>
-        <%= user.email %>
+        <% @users.each do |user|%>
+           <div class="desc p-3 mx-5 my-2">
+          <%= image_tag "https://avatars.githubusercontent.com/u/81183454?v=4", class: "avatar-large", alt: "avatar-large" %>
+          <%= user.email %>
+        <% end %>
+        </div>
+      </div>
 
-      <% end %>
+    <%= submit_tag "START ",  class: "btn btn-primary mt-0 text-center" %>
 
-    <%= submit_tag "START ",  class: "btn btn-primary mt-3" %>
-    </div>
+  </div>
 </div>
-
 <!-- race_horses_path -->
