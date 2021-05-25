@@ -1,6 +1,29 @@
+
+Participation.destroy_all
+puts " participation destroy"
+
+Running.destroy_all
+puts " bet destroy"
+
+Bet.destroy_all
+puts" bets destroy"
+
+Race.destroy_all
+puts "race destriy"
+
+Room.destroy_all
+puts " Room destroy"
+
+User.destroy_all
+puts " user destroy "
+Horse.destroy_all
+puts "horse destroy"
+
+
+
 puts 'Create user'
-  u1 = User.create!(email: 'had@gmail.com', password: '123456')
-  u2 = User.create!(email: 'nico@gmail.com', password: '123456')
+  u1 = User.create!(email: 'had@gmail.com', password: '123456', username: "nico")
+  u2 = User.create!(email: 'nico@gmail.com', password: '123456', username: "had")
 puts 'Done'
 
 puts 'Create horses'
@@ -30,5 +53,6 @@ puts 'Create runnings'
 puts 'Done'
 
 puts 'Create participation'
-  race1 = Participation.create!(user: u1, room: r1)
+  participation1 = Participation.create!(user: u1, room: r1)
+  participation2 = Participation.create!(user: u2, room: r1)
 puts 'Done'
