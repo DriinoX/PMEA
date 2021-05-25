@@ -1,5 +1,5 @@
 class Race < ApplicationRecord
+  belongs_to :room
   has_many :bets
-  has_one :rooms
-  has_many :running
+  has_many :runnings
 end

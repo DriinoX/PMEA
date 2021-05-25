@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_134459) do
+ActiveRecord::Schema.define(version: 2021_05_25_090751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,27 +34,28 @@ ActiveRecord::Schema.define(version: 2021_05_24_134459) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "invitations", force: :cascade do |t|
+  create_table "participations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_invitations_on_room_id"
-    t.index ["user_id"], name: "index_invitations_on_user_id"
+    t.index ["room_id"], name: "index_participations_on_room_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
   create_table "races", force: :cascade do |t|
+    t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_races_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "share_link"
-    t.bigint "race_id", null: false
+    t.bigint "user_id", null: false
     t.string "code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["race_id"], name: "index_rooms_on_race_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "runnings", force: :cascade do |t|
@@ -84,9 +85,10 @@ ActiveRecord::Schema.define(version: 2021_05_24_134459) do
   add_foreign_key "bets", "horses"
   add_foreign_key "bets", "races"
   add_foreign_key "bets", "users"
-  add_foreign_key "invitations", "rooms"
-  add_foreign_key "invitations", "users"
-  add_foreign_key "rooms", "races"
+  add_foreign_key "participations", "rooms"
+  add_foreign_key "participations", "users"
+  add_foreign_key "races", "rooms"
+  add_foreign_key "rooms", "users"
   add_foreign_key "runnings", "horses"
   add_foreign_key "runnings", "races"
 end

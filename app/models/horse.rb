@@ -1,4 +1,4 @@
 class Horse < ApplicationRecord
   has_many :bets
-  has_one :running
+  has_many :runnings
 end

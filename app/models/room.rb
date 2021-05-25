@@ -1,4 +1,5 @@
 class Room < ApplicationRecord
-  belongs_to :race
-  has_many :invitaions
+  belongs_to :user
+  has_many :participations
+  has_many :races
 end
