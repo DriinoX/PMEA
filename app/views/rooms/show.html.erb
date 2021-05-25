@@ -1,0 +1,22 @@
+<div class="container">
+  <p class="lead">
+    <%= link_to 'retourner au menu', root_path, class:"btn btn-primary" %>
+  </p>
+
+    <h1>PMEA</h1>
+    <h2> Copie ce code pour accèder à une partie de  <strong>PMEA</strong>!</h2>
+    <p>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</p>
+
+    <div class="f p-4 mt-4">
+    <h3>liste des Joueurs</h3>
+
+      <% @users.each do |user|%>
+        <%= user.email %>
+
+      <% end %>
+
+    <%= submit_tag "START ",  class: "btn btn-primary mt-3" %>
+    </div>
+</div>
+
+<!-- race_horses_path -->
