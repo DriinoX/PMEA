@@ -12,7 +12,7 @@
 
 <div>
   <% @users.each do |user| %>
-    <ul><%= user.username %> : <%= user.bets.find_by(race_id: @race.id).sip.to_i %> gorgée sur <strong><%= user.bets.find_by(race_id: @race.id).horse.name %></strong></ul>
+    <ul><%= user.username %> : <%= user.bets.find_by(race: @race).sip.to_i %> gorgée sur <strong><%= user.bets.find_by(race_id: @race.id).horse.name %></strong></ul>
   <% end %>
 </div>
 </div>
