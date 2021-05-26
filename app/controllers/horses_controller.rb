@@ -1,5 +1,7 @@
 class HorsesController < ApplicationController
   def index
-   @horses = Horse.all
+    @race = Race.find(params[:race_id])
+    @horses = Horse.all
+    @bet = Bet.new
   end
 end

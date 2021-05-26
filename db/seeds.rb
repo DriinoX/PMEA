@@ -27,11 +27,11 @@ puts 'Create user'
 puts 'Done'
 
 puts 'Create horses'
-  h1 = Horse.create!(name: 'tempete', rating: 1)
-  h2 = Horse.create!(name: 'chaisepliante', rating: 2)
-  h3 = Horse.create!(name: 'elcanason', rating: 3)
-  Horse.create!(name: 'saucissonblanc', rating: 4)
-  Horse.create!(name: 'tonnerre', rating: 5)
+  h1 = Horse.create!(name: 'tempete', rating: 1, description: "vigoureux, courageux et majestueux sont les adjectifs contraires de ce cheval.")
+  h2 = Horse.create!(name: 'chaisepliante', rating: 2, description: "Ce cheval est complètement ravagé, si votre soif ne s'arrête jamais choisissez le.")
+  h3 = Horse.create!(name: 'elcanason', rating: 3, description:"Le cheval par excellence, gracieux et doué, il vous aidera à rester sobre.")
+  Horse.create!(name: 'saucissonblanc', rating: 4, description:"Un cheval avec un pas lourd mais peu souvent surprendre ses adversaires avec ses attrtibuts." )
+  Horse.create!(name: 'tonnerre', rating: 5, description:"Avec ce nouveau cheval tout droit venu d'Islande courrez à fond dans l'hippodrome.")
 puts 'Done'
 
 puts 'Create room'
