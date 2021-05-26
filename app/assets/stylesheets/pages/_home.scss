@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+.back .container {
+  height: 90vh;
+  padding-top: 150px;
+}
+
+.back h1{
+  color: white;
+}
+.cont-search {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+}
+.cont-search a {
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 50px;
+  vertical-align: center;
+  font-size: 20px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+.bouton {
+  width: 100%;
+  margin-left: 5px;
+  font-size: 20px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+
+#code {
+  border: 2px solid white;
+  width: 70px;
+}
+
+.cont-search input {
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 75px;
+}
+
+.back {
+  height: 100%;
+  width: 100%;
+  background-color: $sec;
+}
