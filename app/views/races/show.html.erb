@@ -1,0 +1,8 @@
+
+<div class="d-flex">
+<div>
+  <% @users.each do |user| %>
+    <ul><%= user.username %> : <%= user.bets.find_by(race_id: @race.id).sip %> gorgée sur <%= user.bets.find_by(race_id: @race.id).horse.name %></ul>
+  <% end %>
+</div>
+</div>

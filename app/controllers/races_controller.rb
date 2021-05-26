@@ -3,6 +3,7 @@ class RacesController < ApplicationController
 
   end
   def show
-
+    @race = Race.find(params[:id])
+    @users = @race.room.users
   end
 end
