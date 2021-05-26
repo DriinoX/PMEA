@@ -1,8 +1,5 @@
 class HorsesController < ApplicationController
   def index
-
-  end
-  def create
-
+   @horses = Horse.all
   end
 end

@@ -1,0 +1,88 @@
+<div class="background">
+  <div class= "container">
+    <div class="mt-3 text-center text-black">
+      <h1>Choisissez un cheval</h1>
+    </div>
+    <div class="card-list">
+      <div class="card-product" data-toggle="modal" data-target="#exampleModal">
+        <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey1_uvghjx.png" />
+        <div class="card-product-infos">
+          <h2>horses.name</h2>
+          <p>vigoureux, courageux et majestueux sont les adjectifs contraires de ce cheval.</p>
+        </div>
+      </div>
+      <div class="card-product" data-toggle="modal" data-target="#exampleModal">
+        <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey2_oup5nj.png" />
+        <div class="card-product-infos">
+          <h2>horses.name</h2>
+          <p>Ce cheval est complètement ravagé, si votre soif ne s'arrête jamais choisissez le.</p>
+        </div>
+      </div>
+      <div class="card-product" data-toggle="modal" data-target="#exampleModal">
+        <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey3_ehjcit.png" />
+        <div class="card-product-infos">
+          <h2>horses.name</h2>
+          <p>Le cheval par excellence, gracieux et doué, il vous aidera à rester sobre. </p>
+        </div>
+      </div>
+      <div class="card-product" data-toggle="modal" data-target="#exampleModal">
+        <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey4_msryzp.png" />
+        <div class="card-product-infos">
+          <h2>horses.name</h2>
+          <p>Un cheval avec un pas lourd mais peu souvent surprendre ses adversaires avec ses attrtibuts.</p>
+        </div>
+      </div>
+      <div class="card-product" data-toggle="modal" data-target="#exampleModal">
+        <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey5_gfmvlp.png" />
+        <div class="card-product-infos">
+          <h2>horses.name</h2>
+          <p>Avec ce nouveau cheval tout droit venu d'Islande courrez à fond dans l'hippodrome. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre de gorgées</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initialscale=1.0">
+          <title>Document</title>
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
+        </head>
+        <body>
+          <button class="btn btn-secondary" onclick="decrement()">-</button>
+          <input style="height: 39px;" class="justify-content-center" id=demoInput type=number min=0 max=10>
+          <button class="btn btn-secondary" onclick="increment()">+</button>
+          <script>
+             function increment() {
+                document.getElementById('demoInput').stepUp();
+             }
+             function decrement() {
+                document.getElementById('demoInput').stepDown();
+             }
+          </script>
+        </body>
+      </html>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">Parier</button>
+      </div>
+    </div>
+  </div>
+</div>
