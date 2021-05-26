@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :rooms, only: [:show, :create] do
     resources :races, only: [:create]
-    resources :participations, only: [:create]
   end
+  resources :participations, only: [:create]
 
   resources :races, only: :show do
     resources :runnings, only: :index
