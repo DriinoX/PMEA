@@ -23,9 +23,8 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <%= horse.name %>
             <%= simple_form_for [@race, @bet] do |f| %>
-
+              <%= f.input :horse_id, as: :hidden, input_html: { value: horse.id } %>
               <%= f.input :sip %>
               <%= f.submit 'Parier' %>
             <% end %>
