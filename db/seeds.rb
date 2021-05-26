@@ -56,8 +56,11 @@ puts 'Create bet'
 puts 'Done'
 
 puts 'Create runnings'
-  Running.create!(horse: h1, race: race1, position: 1, speed: 3, acceleration: 2)
-  Running.create!(horse: h2, race: race1, position: 2, speed: 2, acceleration: 1)
+  Running.create!(horse: h1, race: race1, position: 5, speed: 3, acceleration: 2)
+  Running.create!(horse: h2, race: race1, position: 4, speed: 3, acceleration: 2)
+  Running.create!(horse: h3, race: race1, position: 3, speed: 3, acceleration: 2)
+  Running.create!(horse: h4, race: race1, position: 2, speed: 3, acceleration: 2)
+  Running.create!(horse: h5, race: race1, position: 1, speed: 2, acceleration: 1)
 puts 'Done'
 
 puts 'Create participation'
