@@ -1,32 +1,23 @@
-<div class= "jumbotron text-center">
-  <div class="container">
+  <div class= "align-self-center">
+  <div class="container text-center">
     <p class="lead">
       <%= link_to 'retourner au menu', root_path, class:"btn btn-primary" %>
     </p>
-
       <h1>PMEA</h1>
-      <h2> Copie ce code pour accèder à une partie de  <strong>PMEA</strong>!</h2>
-
+      <h2> Donne ce code à tes amis pour qu'ils puissent joindre cette parite de<strong>PMEA</strong>!</h2>
       <%= @room.code %>
-
-
       <p>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</p>
-
       <div class="f p-4 mt-4">
       <h3>liste des Joueurs</h3>
-
-        <% @users.each do |user|%>
+        <% @participations.each do |participation|%>
            <div class="card" >
             <div class="card-body">
           <%= image_tag "https://avatars.githubusercontent.com/u/81183454?v=4", class: "avatar-large", alt: "avatar-large" %>
-          <h5 class="card-title text-align-center text-right"><%= user.username %><h5>
+          <h5 class="card-title text-align-center text-right"><%= participation.user.username %><h5>
              </div>
             </div>
         <% end %>
       </div>
-
     <%= link_to "START ", race_horses_path(@room), class: "btn btn-primary mt-0 text-center mt-4" %>
-
   </div>
 </div>
-<!-- race_horses_path -->

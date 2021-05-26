@@ -4,10 +4,6 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @participations = Participation.where(room: @room)
-    @users = []
-    @participations.each do |participation|
-      @users << participation.user
-    end
   end
 
   def create
@@ -15,6 +11,14 @@ class RoomsController < ApplicationController
     code = rand(1..9999)
     @room.code = code
     @room.save
+    Participation.create(room: @room, user: current_user)
     redirect_to room_path(@room)
+  end
+
+  def destroy
+    # @user = user.find(params[:id])
+    # @user.destroy
+      # si le current user le veux il peut se supprimer de la partie, sinon, même s'il quitte la page
+      # la partie continue avec lui.
   end
 end
