@@ -4,9 +4,9 @@
 
     <%= link_to "Créer", rooms_path, method: :post, class: "btn btn-primary"%>
 
-    <%= form_tag rooms_path, method: :post do %>
-          <%= text_field_tag :code, params[:code], class: "form-control", placeholder: "Code"%>
-          <%= submit_tag "Rechercher", class: "mt-3 p-2 btn btn-primary bouton"%>
+    <%= form_tag participations_path, method: :post do %>
+      <%= text_field_tag :code, params[:code], class: "form-control", placeholder: "Code"%>
+      <%= submit_tag "Rechercher", class: "mt-3 p-2 btn btn-primary bouton"%>
     <% end %>
   </div>
 </div>

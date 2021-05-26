@@ -11,17 +11,10 @@ class RoomsController < ApplicationController
   end
 
   def create
-    if params[:code]
-      if params[:code] != ""
-        @room = Room.where(code: params[:code])
-        redirect_to room_path(@room.first.id)
-      else
-        render 'pages/home'
-      end
-    else
-      @room = Room.new(user: current_user)
-      @room.save
-      redirect_to room_path(@room)
-    end
+    @room = Room.new(user: current_user)
+    code = rand(1..9999)
+    @room.code = code
+    @room.save
+    redirect_to room_path(@room)
   end
 end
