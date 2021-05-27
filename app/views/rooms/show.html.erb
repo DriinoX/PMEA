@@ -15,7 +15,9 @@
           </div>
         <% end %>
       </div>
-    <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-0 text-center"  %>
+    <% if @room.user == current_user %>
+      <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-0 text-center"  %>
+    <% end %>
     <h1><%= image_tag "https://res.cloudinary.com/dekexda28/image/upload/v1621949761/logo_odgk1a.png" %></h1>
       <h1>PMEA</h1>
        <h3>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</h3>
@@ -34,9 +36,9 @@
         </div>
       </div>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      <%= link_to "START ", race_horses_path(@room), class: "btn btn-primary mt-0 text-center mt-4" %>
+      <%#= link_to "START ", race_horses_path(@room), class: "btn btn-primary mt-0 text-center mt-4" %>
     </div>
 
-    <%= button_to 'START', room_races_path(@room), class: "btn btn-primary mt-0 text-center"  %>
+    <%#= button_to 'START', room_races_path(@room), class: "btn btn-primary mt-0 text-center"  %>
   </div>
 </div>
