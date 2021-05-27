@@ -1,0 +1,89 @@
+.card-product {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 68px;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 240px;
+}
+
+.pbouton {
+    width: 31%;
+    margin-left: 4px;
+    font-size: 14px;
+    box-shadow: 1px 5px 15spx 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+=======
+.roomuser {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.roomuser .roomuser-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.roomuser p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.roomuser small {
+  color: #999999;
+  font-weight: bold;
+}
+.roomuser .roomuser-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.roomuser:hover .roomuser-actions {
+  opacity: 1;
+}
+
+.roomuser .roomuser-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.roomuser .roomuser-actions a:hover {
+  color: #555555;
+}
