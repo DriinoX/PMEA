@@ -14,7 +14,7 @@
   height: 30%;
 }
 .cont-search a {
-  border: 2px solid white;
+  border: 2px solid grey;
   border-radius: 10px;
   height: 50px;
   vertical-align: center;
@@ -29,12 +29,12 @@
 }
 
 #code {
-  border: 2px solid white;
+  border: 2px solid grey;
   width: 70px;
 }
 
 .cont-search input {
-  border: 2px solid white;
+  border: 2px solid grey;
   border-radius: 10px;
   height: 75px;
 }
@@ -43,4 +43,12 @@
   height: 100%;
   width: 100%;
   background-color: $sec;
+}
+
+.mt-5, .my-5 {
+    margin-top: 5.5rem !important;
+}
+
+h1, .h1 {
+    font-size: 3.5rem;
 }
