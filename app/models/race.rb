@@ -4,6 +4,7 @@ class Race < ApplicationRecord
   has_many :runnings
   has_many :horses, through: :runnings
   after_create :create_runnings
+  enum progress: [ :pending, :closed ]
 
   def create_runnings
     proba = []

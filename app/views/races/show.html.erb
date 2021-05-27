@@ -12,7 +12,11 @@
 
 <div>
   <% @users.each do |user| %>
-    <ul><%= user.username %> : <%= user.bets.find_by(race: @race).sip.to_i %> gorgée sur <strong><%= user.bets.find_by(race_id: @race.id).horse.name %></strong></ul>
+    <% if user.bet_for(@race) %>
+      <ul><%= user.username %> : <%= user.bet_for(@race).sip.to_i %> gorgée sur <strong><%= user.bet_for(@race).horse.name %></strong></ul>
+    <% else %>
+      <ul>...</ul>
+    <% end %>
   <% end %>
 </div>
 </div>
