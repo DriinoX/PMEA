@@ -12,5 +12,4 @@ Rails.application.routes.draw do
     resources :horses, only: :index
     resources :bets, only: [:create]
   end
-  # resources :runnings, only: :create
 end

@@ -16,6 +16,7 @@ puts " Room destroy"
 
 User.destroy_all
 puts " user destroy "
+
 Horse.destroy_all
 puts "horse destroy"
 
@@ -36,6 +37,7 @@ puts 'Create horses'
   h3 = Horse.create!(name: 'elcanason', rating: 3, description:"Le cheval par excellence, gracieux et doué, il vous aidera à rester sobre.")
   h4 = Horse.create!(name: 'saucissonblanc', rating: 4, description:"Un cheval avec un pas lourd mais peu souvent surprendre ses adversaires avec ses attrtibuts." )
   h5 = Horse.create!(name: 'tonnerre', rating: 5, description:"Avec ce nouveau cheval tout droit venu d'Islande courrez à fond dans l'hippodrome.")
+
 puts 'Done'
 
 puts 'Create room'
