@@ -1,0 +1,42 @@
+.roomuser {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.roomuser .roomuser-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.roomuser p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.roomuser small {
+  color: #999999;
+  font-weight: bold;
+}
+.roomuser .roomuser-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.roomuser:hover .roomuser-actions {
+  opacity: 1;
+}
+
+.roomuser .roomuser-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.roomuser .roomuser-actions a:hover {
+  color: #555555;
+}

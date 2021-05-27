@@ -4,20 +4,23 @@
       <%= link_to 'retourner au menu', root_path, class:"btn btn-primary" %>
     </p>
       <h1>PMEA</h1>
-      <h2> Donne ce code à tes amis pour qu'ils puissent joindre cette parite de<strong>PMEA</strong>!</h2>
-      <%= @room.code %>
-      <p>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</p>
-      <div class="f p-4 mt-4">
-      <h3>liste des Joueurs</h3>
-        <% @participations.each do |participation|%>
-           <div class="card" >
-            <div class="card-body">
-          <%= image_tag "https://avatars.githubusercontent.com/u/81183454?v=4", class: "avatar-large", alt: "avatar-large" %>
-          <h5 class="card-title text-align-center text-right"><%= participation.user.username %><h5>
-             </div>
-            </div>
-        <% end %>
+       <h3>Partage ce code à tes amis pour qu'ils te rejoignent et joue avec toi.</h3>
+      <h4><%= @room.code %></h4>
+      <div class= "container">
+        <div class="f p-4 mt-4">
+          <h3>liste des Joueurs</h3>
+            <% @participations.each do |participation|%>
+             <div class="card" >
+              <div class="card-body">
+                <%= image_tag "https://avatars.githubusercontent.com/u/81183454?v=4", class: "avatar-large", alt: "avatar-large" %>
+                <h5 class="card-title text-align-center text-right"><%= participation.user.username %><h5>
+               </div>
+              </div>
+            <% end %>
+        </div>
       </div>
-    <%= link_to "START ", race_horses_path(@room), class: "btn btn-primary mt-0 text-center mt-4" %>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      <%= link_to "START ", race_horses_path(@room), class: "btn btn-primary mt-0 text-center mt-4" %>
+    </div>
   </div>
 </div>
