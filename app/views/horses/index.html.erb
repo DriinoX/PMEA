@@ -9,7 +9,7 @@
           <%= cl_image_tag horse.photo.key, width: 200, height: 170, crop: :scale %>
           <div class="card-product-infos">
             <h2> <%= horse.name %> </h2>
-            <p><%= horse.description%></p>
+            <p><%= horse.description%> <strong> Cote : <%= horse.runnings.last.rating %></strong></p>
           </div>
         </div>
       </div>

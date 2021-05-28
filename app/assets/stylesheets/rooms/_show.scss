@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 80px;
+  height: 100px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -14,11 +14,10 @@
   object-fit: cover;
 }
 
-// .card-product h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 68px;
-// }
+.zoom {
+  font-size: 50px;
+  color: white;
+}
 
 .card-product p {
   font-size: 12px;
@@ -39,11 +38,11 @@ img {
 }
 
 .pbouton {
-    width: 31%;
+    width: 45%;
     margin-left: 4px;
     font-size: 14px;
-    box-shadow: 1px 5px 15spx 5px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+    box-shadow: 2px 5px 15spx 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 .roomuser {
   display: flex;
@@ -87,3 +86,10 @@ img {
 .roomuser .roomuser-actions a:hover {
   color: #555555;
 }
+
+// .wallpaper {
+//  background-image:url(https://media1.giphy.com/media/eGsLJEPAWDMjJDOmSh/giphy.gif?cid=ecf05e47lug09j72v46x83t56p13n4lk2kfyhpgf1cdxyy9y&rid=giphy.gif&ct=s);
+//  background-repeat: no-repeat;
+//  width:align-self-center;
+
+// }

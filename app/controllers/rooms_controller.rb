@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @participations = Participation.where(room: @room)
     @race = @room.races.last
-    if @race&.pending?
+    if @race&.started?
       redirect_to race_horses_path(@race)
     end
   end
