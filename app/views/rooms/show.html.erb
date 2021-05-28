@@ -6,8 +6,8 @@
       <h3 class="text-white">Joueurs</h3>
         <% @participations.each do |participation|%>
           <div class="card-product">
-              <% if current_user.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, crop: :fill, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% if participation.user.photo.attached? %>
+                <%= cl_image_tag participation.user.photo.key, crop: :fill, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
                 <%= image_tag "https://res.cloudinary.com/dekexda28/image/upload/v1621539379/user_cooewh.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
