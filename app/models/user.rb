@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :bets
   has_many :participations
   has_many :rooms
+
+
+  def bet_for(race)
+    self.bets.find_by(race: race)
+  end
 end

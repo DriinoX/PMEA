@@ -4,6 +4,10 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @participations = Participation.where(room: @room)
+    @race = @room.races.last
+    if @race&.pending?
+      redirect_to race_horses_path(@race)
+    end
   end
 
   def create
