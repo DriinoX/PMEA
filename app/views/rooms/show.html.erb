@@ -24,7 +24,6 @@
     <% if @room.user == current_user %>
 
       <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-0 text-center"  %>
-      <%= @race.progress = "started" %>
     <% end %>
   </div>
 </div>

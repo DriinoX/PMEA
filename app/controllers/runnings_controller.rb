@@ -14,19 +14,19 @@ class RunningsController < ApplicationController
       bet = user.bets.find_by(race: @race)
       position = bet.horse.runnings.find_by(race: @race).position
       if position == 1
-        sip = bet.sip * 2
+        sip = bet.sip * bet.horse.runnings.findby(race: @race).rating
         x = "distribue"
       elsif position == 2
-        sip = bet.sip
+        sip = (bet.sip * bet.sip * bet.horse.runnings.findby(race: @race).rating) / 2
         x = "distribue"
       elsif position == 3
         sip = bet.sip
         x = "boit ET distribue"
       elsif position == 4
-        sip = bet.sip
+        sip = (bet.sip / 2)
         x = "boit"
       else
-        sip = bet.sip * 2
+        sip = bet.sip
         x = "boit"
 
       end
@@ -39,5 +39,7 @@ class RunningsController < ApplicationController
       }
     end
     @results.sort_by! { |result| result[:position] }
+    @race.progress = "closed"
+    @race.save
   end
 end
