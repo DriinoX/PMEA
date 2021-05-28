@@ -9,7 +9,7 @@
           <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey1_uvghjx.png" />
           <div class="card-product-infos">
             <h2> <%= horse.name %> </h2>
-            <p><%= horse.description%> <strong> Cote : <%= @runnings.find_by(horse: horse).rating %></strong></p>
+            <p><%= horse.description%> <strong> Cote : <%= horse.runnings.last.rating %></strong></p>
           </div>
         </div>
       </div>
