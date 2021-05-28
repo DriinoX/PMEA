@@ -1,22 +1,14 @@
-
- <div class= “align-self-center”>
-  <div class=“container text-center”>
-    <p class=“lead”>
-
-      <%= link_to "retourner au menu", root_path, class:"pbouton btn btn-primary mt-3" %>
-
  <div class= "align-self-center">
   <div class="container text-center">
     <p class="lead">
       <%= link_to 'retourner au menu', root_path, class:"pbouton btn btn-primary mt-3" %>
-
     </p>
       <%= @room.code %>
       <p>Envoie ce code à tes potes !</p>
       <div class="f p-4 mt-4">
       <h3>Joueurs</h3>
         <% @participations.each do |participation|%>
-          <div class=“card-product”>
+          <div class="card-product">
 
                <%= image_tag "https://avatars.githubusercontent.com/u/81183454?v=4" %>            <div class="card-product-infos">
 
@@ -27,12 +19,9 @@
         <% end %>
       </div>
 
-    <%= button_to ‘START’, room_races_path(@room), class: “pbouton btn btn-primary mt-0 text-center”  %>
     <h1><%= image_tag "https://res.cloudinary.com/dekexda28/image/upload/v1621949761/logo_odgk1a.png" %></h1>
 
     <% if @room.user == current_user %>
-
-      <% if @room.user == current_user %>
 
       <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-0 text-center"  %>
     <% end %>
