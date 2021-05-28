@@ -17,6 +17,7 @@
       </div>
     <% if @room.user == current_user %>
       <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-0 text-center"  %>
+      <%= @race.progress = "started" %>
     <% end %>
     <h1><%= image_tag "https://res.cloudinary.com/dekexda28/image/upload/v1621949761/logo_odgk1a.png" %></h1>
       <h1>PMEA</h1>
