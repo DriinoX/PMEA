@@ -1,8 +1,9 @@
+<meta http-equiv="refresh" content="1">
 <div class="container">
   <div class="banner stick" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media1.tenor.com/images/335b53f23a9c756d0dafb7b33cb39480/tenor.gif?itemid=21696967);">
     <h1 class="text-center"><strong>ET ZÈ PARTIS !!!</strong>!</h1>
 
- <div class="container">
+ <div class="container" onload = "JavaScript:AutoRefresh(1000);">
     <h4 class="text-center">
       <% @users.each do |user| %>
         <% if user.bet_for(@race) %>
