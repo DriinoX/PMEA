@@ -6,7 +6,7 @@
     <% @horses.each do |horse| %>
       <div class="card-list">
         <div class="card-product" data-toggle="modal" data-target="#horse-<%= horse.id %>">
-          <img src="https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey1_uvghjx.png" />
+          <%= cl_image_tag horse.photo.key, width: 200, height: 170, crop: :scale %>
           <div class="card-product-infos">
             <h2> <%= horse.name %> </h2>
             <p><%= horse.description%></p>
