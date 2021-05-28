@@ -17,7 +17,7 @@ class RunningsController < ApplicationController
         sip = bet.sip * bet.horse.runnings.find_by(race: @race).rating
         x = "distribue"
       elsif position == 2
-        sip = (bet.sip * bet.sip * bet.horse.runnings.find_by(race: @race).rating) / 2
+        sip = (bet.sip * bet.horse.runnings.find_by(race: @race).rating) / 2
         x = "distribue"
       elsif position == 3
         sip = bet.sip
