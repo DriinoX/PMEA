@@ -21,7 +21,7 @@ class Race < ApplicationRecord
       Running.create(
         rating: horse.rating,
         race: self,
-        position: (horse_count + 1 - i),
+        position: (horse_count - i),
         horse: horse,
         speed: 1,
         acceleration: 2
