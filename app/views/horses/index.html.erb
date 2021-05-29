@@ -23,14 +23,12 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <%= simple_form_for [@race, @bet] do |f| %>
-              <%= f.input :horse_id, as: :hidden, input_html: { value: horse.id } %>
-              <%= f.input :sip %>
-              <%= f.submit 'Parier' %>
-            <% end %>
-
             <div class="modal-body text-center">
-
+              <%= simple_form_for [@race, @bet] do |f| %>
+                <%= f.input :horse_id, as: :hidden, input_html: { value: horse.id } %>
+                <%= f.input :sip, label: 'gorgées'%>
+                <%= f.submit 'Parier', class: 'bet_button' %>
+              <% end %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
