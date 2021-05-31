@@ -7,6 +7,10 @@ class ParticipationsController < ApplicationController
       end
       @participation = Participation.new(user: current_user, room: @room)
       if @participation.save
+              RoomChannel.broadcast_to(
+        @room,
+        render(partial: "participation", locals: { participation: @participation })
+      )
         redirect_to room_path(@room)
       else
         flash[:notice] = "Le code entré n'est pas valide"
