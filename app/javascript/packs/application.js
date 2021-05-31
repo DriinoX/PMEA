@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -27,7 +28,30 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import {refreshh} from '../rooms/show.js';
 
+
+
+// trouver
+
+//const refresh = document.querySelector("#refresh");
+//console.dir(refresh.dataset.refresh === 'true');
+let n = 1
+  window.setTimeout(function () {
+ // const refresh = document.querySelector("#refresh");
+  n += 1
+  //console.log(refresh.dataset.refresh === 'true')
+  if (refresh.dataset.refresh === 'true') {
+  window.location.reload();
+  };
+  console.log(n)
+  }, 3000);
+
+
+
+  // refreshh();
+
+// window.location.reload();
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
