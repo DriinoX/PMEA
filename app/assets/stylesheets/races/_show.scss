@@ -1,0 +1,17 @@
+.hippo {
+  margin-top: 50px;
+  background-image: url(https://res.cloudinary.com/dekexda28/image/upload/v1622453547/hippo2_uvebo6.png);
+  border: 1px solid green;
+  background-size: cover;
+  height: 140px;
+  width: 100%;
+  position: relative;
+  #horse1 {
+    height: 30px;
+    width: auto;
+    position: absolute;
+    top: 110px;
+    left: 50px;
+  }
+}
+

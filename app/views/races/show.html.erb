@@ -1,13 +1,8 @@
 <div class="container">
-  <div class="banner stick" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media1.tenor.com/images/335b53f23a9c756d0dafb7b33cb39480/tenor.gif?itemid=21696967);">
-    <h1 class="text-center"><strong>ET ZÈ PARTIS !!!</strong>!</h1>
-
-    <div class="container">
-      <div align="center">
-        <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
-      </div>
+    <div class="hippo">
+      <img id="horse1" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448363/yfp4aolbfntrgy3mk91am64u8osf.png" alt="jockey1">
     </div>
- </div>
+    <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
     <h4 class="text-center ul">
       <% @users.each do |user| %>
         <% if user.bet_for(@race) %>
@@ -19,4 +14,5 @@
         <% end %>
       <% end %>
     </h4>
+    <button class="btn" id="race"> click </button>
 </div>
