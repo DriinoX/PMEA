@@ -28,6 +28,9 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+import { initRoomCable } from '../channels/room_channel';
+
 import {refreshh} from '../rooms/show.js';
 
 
@@ -65,8 +68,10 @@ replay()
 
   // refreshh();
 
+
 // window.location.reload();
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initRoomCable()
 });
