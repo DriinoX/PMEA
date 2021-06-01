@@ -34,19 +34,33 @@ import {refreshh} from '../rooms/show.js';
 
 // trouver
 
-//const refresh = document.querySelector("#refresh");
+const refresh = document.querySelector("#refresh");
 //console.dir(refresh.dataset.refresh === 'true');
-let n = 1
-  window.setTimeout(function () {
- // const refresh = document.querySelector("#refresh");
-  n += 1
-  //console.log(refresh.dataset.refresh === 'true')
-  if (refresh.dataset.refresh === 'true') {
-  window.location.reload();
-  };
-  console.log(n)
-  }, 3000);
+function replay() {
 
+
+  const roomId = refresh.dataset.roomid;
+  const url = `/rooms/refresh/${roomId}`
+  fetch(url)
+  .then(response => response.json())
+  .then((data) => {
+    if(data.refresh === true){
+      window.location.reload();
+    };
+  });
+  window.setTimeout(function(){replay()}, 3000);
+};
+
+replay()
+
+  // fetch(url)
+  // {
+  //  if (data['refresh'] === 'true') {
+  //   window.location.reload();
+  //  }
+  // }
+
+  // };
 
 
   // refreshh();
