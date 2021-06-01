@@ -12,31 +12,44 @@
 
 function running(teta) {
   const cheval = document.getElementById("horse1");
+  const delta = 50;
+
   let leftValueString = window.getComputedStyle(cheval);
   let leftValue = parseInt(leftValueString.left, 10);
-  const delta = 50;
-  if (leftValue <= 250){
-    linearBot(cheval, leftValue, delta)
-  }
-  // teta += 2 * Math.PI * 1/delta;
-  // console.log(teta);
-  // cheval.style.left = `${60 + 60 * Math.cos(teta)}px`;
-  // cheval.style.top = `${60 - 60 * Math.sin(teta)}px`;
-  // setTimeout(function(){ running(teta) }, delta);
-}
 
-function linearBot(cheval, leftValue, delta) {
-  cheval.style.left = `${leftValue + 10}px`
-  setTimeout(function(){ running() }, delta);
+  let topValueString = window.getComputedStyle(cheval);
+  let topValue = parseInt(topValueString.top, 10);
+
+  if (leftValue <= 250){
+    linearBot()
+  }
+  if (topValue > 0 ){
+    turnRight()
+  }
 }
 
 
 const animation = (data) => {
   const btn = document.querySelector('#race');
   btn.addEventListener("click", (event) => {
-    running(0)
+    running(100)
   });
 };
+
+function linearBot(){
+  cheval.style.left = `${leftValue + 10}px`
+  setTimeout(function(){ running() }, delta);
+}
+
+function turnRight(){
+  teta += Math.PI * 1/delta;
+  console.log(teta);
+  cheval.style.left = `${60 + 60 * Math.cos(teta)}px`;
+  cheval.style.top = `${60 - 60 * Math.sin(teta)}px`;
+  setTimeout(function(){ running(teta) }, delta);
+}
+
+
 
 // function sleep(milliseconds) {
 //     const date = Date.now();
