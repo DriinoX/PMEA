@@ -1,3 +1,4 @@
+<div id="refresh" class="d-none" data-refresh="<%= @room.refresh? %>" data-roomid="<%= @room.id %>"></div>
  <div class= "align-self-center back">
   <div class="container text-center">
       <div class="zoom"><%= @room.code %></div>
@@ -21,7 +22,7 @@
 
     <% if @room.user == current_user %>
 
-      <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-3 text-center"  %>
+      <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-3 text-center"%>
     <% end %>
   </div>
 </div>

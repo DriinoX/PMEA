@@ -25,4 +25,10 @@ class RoomsController < ApplicationController
       # si le current user le veux il peut se supprimer de la partie, sinon, même s'il quitte la page
       # la partie continue avec lui.
   end
+
+  def refresh
+    @room = Room.find(params[:id])
+    render json: { success: true, refresh: @room.refresh? }
+  end
+
 end

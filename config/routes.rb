@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :horses, only: :index
     resources :bets, only: [:create]
   end
+
+  get "rooms/refresh/:id", to: "rooms#refresh"
 end
