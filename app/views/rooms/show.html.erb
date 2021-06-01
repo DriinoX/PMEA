@@ -2,25 +2,13 @@
   <div class="container text-center">
       <div class="zoom"><%= @room.code %></div>
       <p class="text-white">Envoie ce code à tes potes !</p>
-      <div class="f p-4 mt-3">
       <h3 class="text-white">Joueurs</h3>
+      <div id="participations" class="f p-4 mt-3" data-room=<%="#{@room.id}"%>>
         <% @participations.each do |participation|%>
-          <div class="card-product">
-              <% if participation.user.photo.attached? %>
-                <%= cl_image_tag participation.user.photo.key, crop: :fill, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
-                <%= image_tag "https://res.cloudinary.com/dekexda28/image/upload/v1621539379/user_cooewh.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% end %>
-              <div class="card-product-infos">
-                <h2><%= participation.user.username %></h2>
-              </div>
-          </div>
+          <%= render "rooms/participation",participation: participation %>
         <% end %>
       </div>
-
-
     <% if @room.user == current_user %>
-
       <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-3 text-center"  %>
     <% end %>
   </div>
