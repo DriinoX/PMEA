@@ -1,12 +1,12 @@
 
-const lineTopPositions = () => {
+// const lineTopPositions = () => {
 
 
-  while ( leftValue <= 250) {
-    console.log(leftValue);
+//   while ( leftValue <= 250) {
+//     console.log(leftValue);
 
-  }
-}
+//   }
+// }
 
 
 
@@ -15,14 +15,19 @@ function running(teta) {
   let leftValueString = window.getComputedStyle(cheval);
   let leftValue = parseInt(leftValueString.left, 10);
   const delta = 50;
-  cheval.style.left = `${leftValue + 10}px`
-
+  if (leftValue <= 250){
+    linearBot(cheval, leftValue, delta)
+  }
   // teta += 2 * Math.PI * 1/delta;
   // console.log(teta);
   // cheval.style.left = `${60 + 60 * Math.cos(teta)}px`;
   // cheval.style.top = `${60 - 60 * Math.sin(teta)}px`;
-  // var t = setTimeout(function(){ running(teta) }, delta);
-  var t = setTimeout(function(){ running() }, delta);
+  // setTimeout(function(){ running(teta) }, delta);
+}
+
+function linearBot(cheval, leftValue, delta) {
+  cheval.style.left = `${leftValue + 10}px`
+  setTimeout(function(){ running() }, delta);
 }
 
 
@@ -33,13 +38,13 @@ const animation = (data) => {
   });
 };
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
+// function sleep(milliseconds) {
+//     const date = Date.now();
+//     let currentDate = null;
+//     do {
+//       currentDate = Date.now();
+//     } while (currentDate - date < milliseconds);
+// }
 
 
 // let topValueString = window.getComputedStyle(cheval);
