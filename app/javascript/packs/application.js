@@ -31,6 +31,8 @@ import "bootstrap";
 
 import { initRoomCable } from '../channels/room_channel';
 
+import { initRaceCable } from '../channels/race_channel';
+
 import {refreshh} from '../rooms/show.js';
 
 
@@ -74,4 +76,12 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initRoomCable()
+});
+
+
+// window.location.reload();
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+  initRaceCable()
 });

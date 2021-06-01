@@ -10,13 +10,7 @@
  </div>
     <h4 class="text-center ul">
       <% @users.each do |user| %>
-        <% if user.bet_for(@race) %>
-        <div class="text-center ul">
-          <ul><%= user.username %> : <%= user.bet_for(@race).sip.to_i %> gorgées sur <strong><%= user.bet_for(@race).horse.name %></strong></ul>
-        </div>
-        <% else %>
-          <ul>...</ul>
-        <% end %>
+        <%= render "races/bet",user: user %>
       <% end %>
     </h4>
 </div>
