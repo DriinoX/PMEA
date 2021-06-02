@@ -8,6 +8,7 @@ class RacesController < ApplicationController
 
   def show
     @race = Race.find(params[:id])
+    @room = @race.room
     @runnings = @race.runnings
     @users = @race.room.users.select { |user| user.bet_for(@race).present? }
   end

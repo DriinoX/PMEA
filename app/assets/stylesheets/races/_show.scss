@@ -1,7 +1,8 @@
 .hippo {
   margin-top: 50px;
   background-image: url(https://res.cloudinary.com/dekexda28/image/upload/v1622453547/hippo2_uvebo6.png);
-  border: 1px solid green;
+  // border: 3px solid $sec;
+  // border-bottom: none;
   background-size: cover;
   height: 140px;
   width: 100%;
@@ -31,4 +32,25 @@
     top: 110px;
     left: 50px;
   }
+}
+
+#race {
+  border-radius: 20px;
+}
+
+.resume {
+  background-color: $sec;
+  color: $prim;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  ul {
+    list-style: none;
+    padding: 10px 0px;
+  }
+}
+
+#mise-title {
+  color: $sec;
+  font-weight: bold;
+  font-size: 40px;
 }
