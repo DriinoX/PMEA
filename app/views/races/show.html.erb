@@ -6,12 +6,18 @@
       <img id="horse4" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448357/yj43fy6kppqb61trhgdlr133ymtn.png" alt="jockey4">
       <img id="horse5" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448355/c925pd31eo7aoyh8ikd2wjy6py4s.png" alt="jockey5">
     </div>
-
-    <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
-    <button class="btn" id="race"> click </button>
-    <h4 id="users" class="text-center ul" data-race=<%="#{@race.id}"%>>
+    <% if @room.user == current_user %>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-info mt-3" id="race"> Lancer la course </button>
+      </div>
+    <% end %>
+    <h3 id="mise-title" class="text-center mt-3"> Les mises :</h3>
+    <h4 id="users" class="text-center ul mt-3" data-race=<%="#{@race.id}"%>>
       <% @users.each do |user| %>
         <%= render "races/user", user: user %>
       <% end %>
     </h4>
+    <div class="d-flex justify-content-center">
+      <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
+    </div>
  </div>

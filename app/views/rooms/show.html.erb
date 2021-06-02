@@ -1,14 +1,14 @@
 <div id="refresh" class="d-none" data-refresh="<%= @room.refresh? %>" data-roomid="<%= @room.id %>"></div>
- <div class= "align-self-center back">
+<div class= "align-self-center back-home">
   <div class="container text-center">
-      <div class="zoom"><%= @room.code %></div>
-      <p class="text-white">Envoie ce code à tes potes !</p>
-      <h3 class="text-white">Joueurs</h3>
-      <div id="participations" class="f p-4 mt-3" data-room=<%="#{@room.id}"%>>
-        <% @participations.each do |participation|%>
-          <%= render "rooms/participation",participation: participation %>
-        <% end %>
-      </div>
+    <div class="zoom"><%= @room.code %></div>
+    <p class="text-white">Envoie ce code à tes potes !</p>
+    <h3 class="text-white">Joueurs</h3>
+    <div id="participations" class="f px-4 mt-3" data-room="<%= @room.id %>">
+      <% @participations.each do |participation|%>
+        <%= render "rooms/participation",participation: participation %>
+      <% end %>
+    </div>
     <% if @room.user == current_user %>
       <%= button_to 'START', room_races_path(@room), class: "pbouton btn btn-primary mt-3 text-center"%>
     <% end %>

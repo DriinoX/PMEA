@@ -19,6 +19,12 @@
   color: white;
 }
 
+.back-home {
+  height: 100%;
+  width: 100%;
+  background-color: $sec;
+}
+
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -29,6 +35,12 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 100%;
+  text-align: center;
+  h2 {
+    font-size: 30px;
+    color: $sec;
+  }
 }
 
 img {
@@ -43,6 +55,11 @@ img {
     font-size: 14px;
     box-shadow: 2px 5px 15spx 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    font-weight: bold;
+    color: $sec;
+    &:hover {
+      opacity: 0.8;
+    }
 }
 .roomuser {
   display: flex;
