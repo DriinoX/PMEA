@@ -10,6 +10,10 @@ class BetsController < ApplicationController
     @bet.race = @race
     @bet.horse = Horse.find(params[:bet][:horse_id])
     if @bet.save
+      RaceChannel.broadcast_to(
+        @race,
+        render_to_string(partial: "races/user", locals: { user: current_user })
+      )
       redirect_to race_path(@race)
     else
       flash[:alert] = @bet.errors.full_messages

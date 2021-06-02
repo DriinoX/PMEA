@@ -6,16 +6,12 @@
       <img id="horse4" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448357/yj43fy6kppqb61trhgdlr133ymtn.png" alt="jockey4">
       <img id="horse5" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448355/c925pd31eo7aoyh8ikd2wjy6py4s.png" alt="jockey5">
     </div>
+
     <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
-    <h4 class="text-center ul">
+ </div>
+    <h4 id="users" class="text-center ul" data-race=<%="#{@race.id}"%>>
       <% @users.each do |user| %>
-        <% if user.bet_for(@race) %>
-        <div class="text-center ul">
-          <ul><%= user.username %> : <%= user.bet_for(@race).sip.to_i %> gorgées sur <strong><%= user.bet_for(@race).horse.name %></strong></ul>
-        </div>
-        <% else %>
-          <ul>...</ul>
-        <% end %>
+        <%= render "races/user", user: user %>
       <% end %>
     </h4>
     <button class="btn" id="race"> click </button>
