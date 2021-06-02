@@ -8,15 +8,9 @@
       </div>
     </div>
  </div>
-    <h4 class="text-center ul">
+    <h4 id="users" class="text-center ul" data-race=<%="#{@race.id}"%>>
       <% @users.each do |user| %>
-        <% if user.bet_for(@race) %>
-        <div class="text-center ul">
-          <ul><%= user.username %> : <%= user.bet_for(@race).sip.to_i %> gorgées sur <strong><%= user.bet_for(@race).horse.name %></strong></ul>
-        </div>
-        <% else %>
-          <ul>...</ul>
-        <% end %>
+        <%= render "races/user", user: user %>
       <% end %>
     </h4>
 </div>
