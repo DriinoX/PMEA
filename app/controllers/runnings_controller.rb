@@ -20,7 +20,7 @@ class RunningsController < ApplicationController
     @zouho3 = []
     @zouho4 = []
     @zouho5 = []
-
+    @cheval = ""
 
 
     @users.each do |user|
@@ -28,19 +28,14 @@ class RunningsController < ApplicationController
       position = bet.horse.runnings.find_by(race: @race).position
       if position == 1
         sip = bet.sip * bet.horse.runnings.find_by(race: @race).rating
-        x = "distribue"
       elsif position == 2
-        sip = (bet.sip * bet.horse.runnings.find_by(race: @race).rating)
-        x = "distribue"
+        sip = (bet.sip * bet.horse.runnings.find_by(race: @race).rating) / 2
       elsif position == 3
         sip = bet.sip
-        x = "boit ET distribue"
       elsif position == 4
         sip = (bet.sip / 2)
-        x = "boit"
       else
         sip = bet.sip
-        x = "boit"
 
       end
 
@@ -48,14 +43,11 @@ class RunningsController < ApplicationController
         username: user.username,
         sip: sip,
         position: position,
-        x: x,
-        message: ''
       }
     end
     @results.sort_by! { |result| result[:position] }
     @race.progress = "closed"
     @race.save
-
 
   end
 end
