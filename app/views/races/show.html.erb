@@ -1,5 +1,5 @@
 <div class="container">
-    <div id="hippo" class="hippo" data-un="<%= Running.find_by(position: 1).horse.name %>" date-deux="<%= Running.find_by(position: 2).horse.name %>" date-trois="<%= Running.find_by(position: 3).horse.name %>" date-quatre="<%= Running.find_by(position: 4).horse.name %>" date-cind="<%= Running.find_by(position: 5).horse.name %>">
+    <div id="hip" class="hippo" data-un="<%= Running.where(position: 1).last.horse.name %>" date-deux="<%= Running.where(position: 2).last.horse.name %>" date-trois="<%= Running.where(position: 3).last.horse.name %>" date-quatre="<%= Running.where(position: 4).last.horse.name %>" date-cind="<%= Running.where(position: 5).last.horse.name %>">
       <img id="horse1" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448363/yfp4aolbfntrgy3mk91am64u8osf.png" alt="jockey1">
       <img id="horse2" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448361/bc01q4le0iu7znz90mmblmn5o0hq.png" alt="jockey2">
       <img id="horse3" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448359/9hlz5f2py8v3y2flsq50g0c4mtj7.png" alt="jockey3">
@@ -8,11 +8,10 @@
     </div>
 
     <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
- </div>
+    <button class="btn" id="race"> click </button>
     <h4 id="users" class="text-center ul" data-race=<%="#{@race.id}"%>>
       <% @users.each do |user| %>
         <%= render "races/user", user: user %>
       <% end %>
     </h4>
-    <button class="btn" id="race"> click </button>
-</div>
+ </div>

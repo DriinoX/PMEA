@@ -14,6 +14,17 @@ const tetaMaxr =  Math.PI / 2
 const delta = 50;
 
 
+//
+// = queryselector.data-set.un
+
+// const hippo = document.querySelector(".hippo");
+// console.dir(hippo)
+// const un = hippo.dataset.un;
+// console.log(un)
+// const deux = hippo.dataset.deux;
+// console.log(deux)
+//
+
 const definePositions = (a1, b1, a2, b2) => {
   let dx = 1;
   // const dt = dx * Math.PI / (4 * 60 )
@@ -24,8 +35,8 @@ const definePositions = (a1, b1, a2, b2) => {
   while (x < xMax) {
     dx = a1 * x + b1
     x += dx
-    console.log(dx)
-    console.log(x)
+    // console.log(dx)
+    // console.log(x)
     y = yMax
     positions.push({x: x, y: y})
   }
@@ -58,12 +69,13 @@ const definePositions = (a1, b1, a2, b2) => {
   let ii = 0
   while (ii <= 1000) {
     positions.push({x: xMin, y: yMax})
-    console.log(ii);
+    // console.log(ii);
     ii += 1
   }
 
   return positions
 }
+
 
 // 5EME
 const cheval1 = document.getElementById("horse1");
