@@ -33,23 +33,23 @@ puts 'Done'
 
 puts 'Create horses'
   file = URI.open('https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey4_msryzp.png')
-  h1 = Horse.new(name: 'tempete', rating: 1, description: "vigoureux, courageux et majestueux sont les adjectifs contraires de ce cheval.")
+  h1 = Horse.new(name: 'Tempete', rating: 1, description: "vigoureux, courageux et majestueux sont les adjectifs contraires de ce cheval.")
   h1.photo.attach(io: file, filename: 'h1.png', content_type: 'image/png')
 
   file = URI.open('https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey2_oup5nj.png')
-  h2 = Horse.create!(name: 'chaisepliante', rating: 2, description: "Ce cheval est complètement ravagé, si votre soif ne s'arrête jamais choisissez le.")
+  h2 = Horse.create!(name: 'Chaisepliante', rating: 2, description: "Ce cheval est complètement ravagé, si votre soif ne s'arrête jamais choisissez le.")
   h2.photo.attach(io: file, filename: 'h2.png', content_type: 'image/png')
 
   file = URI.open('https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey3_ehjcit.png')
-  h3 = Horse.create!(name: 'elcanason', rating: 3, description:"Le cheval par excellence, gracieux et doué, il vous aidera à rester sobre.")
+  h3 = Horse.create!(name: 'Elcanason', rating: 3, description:"Le cheval par excellence, gracieux et doué, il vous aidera à rester sobre.")
   h3.photo.attach(io: file, filename: 'h3.png', content_type: 'image/png')
 
   file = URI.open('https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey1_uvghjx.png')
-  h4 = Horse.create!(name: 'saucissonblanc', rating: 4, description:"Un cheval avec un pas lourd mais peu souvent surprendre ses adversaires avec ses attrtibuts." )
+  h4 = Horse.create!(name: 'Saucissonblanc', rating: 4, description:"Un cheval avec un pas lourd mais peu souvent surprendre ses adversaires avec ses attrtibuts." )
   h4.photo.attach(io: file, filename: 'h4.png', content_type: 'image/png')
 
   file = URI.open('https://res.cloudinary.com/dekexda28/image/upload/v1621950902/jockey5_gfmvlp.png')
-  h5 = Horse.create!(name: 'tonnerre', rating: 5, description:"Avec ce nouveau cheval tout droit venu d'Islande courrez à fond dans l'hippodrome.")
+  h5 = Horse.create!(name: 'Tonnerre', rating: 5, description:"Avec ce nouveau cheval tout droit venu d'Islande courrez à fond dans l'hippodrome.")
   h5.photo.attach(io: file, filename: 'h5.png', content_type: 'image/png')
 
 puts 'Done'

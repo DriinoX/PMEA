@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    attributes:
+      bet:
+        sip: ""
+    errors:
+      models:
+        bet:
+          attributes:
+            sip:
+              blank: "is required"

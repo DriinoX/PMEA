@@ -7,7 +7,7 @@
     <%= @p1 %> :
     <% @results.each do |result| %>
       <% if @p1 == result[:position] %>
-       <% @zouho1  <<  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+       <% @zouho1  <<  "#{result[:username]} distribue #{pluralize(result[:sip].to_i, 'gorgée', plural: 'gorgées')}" %>
        <% end %>
       <% end %>
     <% if @zouho1 == [] %>
@@ -22,7 +22,7 @@
     <%= @p2 %> :
     <% @results.each do |result| %>
       <% if @p2 == result[:position] %>
-       <% @zouho2  <<  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+       <% @zouho2  <<  "#{result[:username]} distribue #{pluralize(result[:sip].to_i, 'gorgée', plural: 'gorgées')}" %>
        <% end %>
       <% end %>
     <% if @zouho2 == [] %>
@@ -37,7 +37,7 @@
     <%= @p3 %> :
     <% @results.each do |result| %>
       <% if @p3 == result[:position] %>
-       <% @zouho3  <<  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+       <% @zouho3  <<  "#{result[:username]} est 3ème, il est neutre ( mais peut quand meme recevoir des gorgées des gagnants )" %>
        <% end %>
       <% end %>
     <% if @zouho3 == [] %>
@@ -52,7 +52,7 @@
     <%= @p4 %> :
     <% @results.each do |result| %>
       <% if @p4 == result[:position] %>
-       <% @zouho4  <<  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+       <% @zouho4  <<  "#{result[:username]} boit #{pluralize(result[:sip].to_i, 'gorgée', plural: 'gorgées')}" %>
        <% end %>
       <% end %>
     <% if @zouho4 == [] %>
@@ -67,7 +67,7 @@
     <%= @p5 %> :
     <% @results.each do |result| %>
       <% if @p5 == result[:position] %>
-       <% @zouho5  <<  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+       <% @zouho5  <<  "#{result[:username]} boit #{pluralize(result[:sip].to_i, 'gorgée', plural: 'gorgées')}" %>
        <% end %>
       <% end %>
     <% if @zouho5 == [] %>
