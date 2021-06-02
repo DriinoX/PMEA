@@ -15,11 +15,12 @@ class RunningsController < ApplicationController
     @p3 = 3
     @p4 = 4
     @p5 = 5
-    @zouho1 =""
-    @zouho2 =""
-    @zouho3 =""
-    @zouho4 =""
-    @zouho5 =""
+    @zouho1 = []
+    @zouho2 = []
+    @zouho3 = []
+    @zouho4 = []
+    @zouho5 = []
+
 
 
     @users.each do |user|
