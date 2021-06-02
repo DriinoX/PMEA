@@ -6,12 +6,29 @@
   height: 140px;
   width: 100%;
   position: relative;
-  #horse1 {
+  img {
     height: 30px;
     width: auto;
     position: absolute;
+  }
+  #horse1 {
+    top: 110px;
+    left: 62px;
+  }
+  #horse2 {
+    top: 110px;
+    left: 59px;
+  }
+  #horse3 {
+    top: 110px;
+    left: 56px;
+  }
+  #horse4 {
+    top: 110px;
+    left: 53px;
+  }
+  #horse5 {
     top: 110px;
     left: 50px;
   }
 }
-
