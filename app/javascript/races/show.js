@@ -179,9 +179,11 @@ function running(i) {
 
 const animation = (data) => {
   const btn = document.querySelector('#race');
-  btn.addEventListener("click", (event) => {
-    running(0)
-  });
+  if (btn) {
+    btn.addEventListener("click", (event) => {
+      running(0)
+    });
+  }
 };
 
 // function linearBot(cheval, leftValue, delta, teta){
