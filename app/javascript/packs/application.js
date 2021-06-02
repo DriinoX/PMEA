@@ -42,18 +42,18 @@ import {refreshh} from '../rooms/show.js';
 const refresh = document.querySelector("#refresh");
 //console.dir(refresh.dataset.refresh === 'true');
 function replay() {
-
-
-  const roomId = refresh.dataset.roomid;
-  const url = `/rooms/refresh/${roomId}`
-  fetch(url)
-  .then(response => response.json())
-  .then((data) => {
-    if(data.refresh === true){
-      window.location.reload();
-    };
-  });
-  window.setTimeout(function(){replay()}, 3000);
+  if (refresh) {
+    const roomId = refresh.dataset.roomid;
+    const url = `/rooms/refresh/${roomId}`
+    fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      if(data.refresh === true){
+        window.location.reload();
+      };
+    });
+    window.setTimeout(function(){replay()}, 3000);
+  }
 };
 
 replay()
@@ -76,12 +76,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initRoomCable()
-});
-
-
-// window.location.reload();
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   initRaceCable()
 });
