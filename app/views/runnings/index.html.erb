@@ -1,10 +1,117 @@
 <div class ="container">
 
+
+<li>
+
   <% @results.each do |result| %>
+    <% if @p1 == result[:position] %>
+     <% @zouho1  =  "#{result[:username]} distribue #{result[:sip].to_i} gorgée" %>
+     <% end %>
+  <% end %>
+    <% if @zouho1 == "" %>
+      <% @zouho1 = "Dommage, personne n'a choisit ce cheval !" %>
+    <% end %>
+
+  <%= @p1 %> : <%= @zouho1 %>
+</li>
+
+<li>
+  <% @results.each do |result| %>
+    <% if @p2 == result[:position] %>
+     <% @zouho2  =  "#{result[:username]} distribue #{result[:sip].to_i} gorgée" %>
+     <% end %>
+  <% end %>
+  <% if @zouho2 == "" %>
+      <% @zouho2 = "Dommage, personne n'a choisit ce cheval !" %>
+    <% end %>
+  <%= @p2 %> : <%= @zouho2 %>
+</li>
+
+<li>
+  <% @results.each do |result| %>
+    <% if @p3 == result[:position] %>
+     <% @zouho3  =  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+     <% end %>
+  <% end %>
+  <% if @zouho3 == "" %>
+      <% @zouho3 = "Dommage, personne n'a choisit ce cheval !" %>
+    <% end %>
+  <%= @p3 %> : <%= @zouho3 %>
+</li>
+
+<li>
+  <% @results.each do |result| %>
+    <% if @p4 == result[:position] %>
+     <% @zouho4  =  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+     <% end %>
+  <% end %>
+  <% if @zouho4 == "" %>
+      <% @zouho4 = "Heureusement que personne n'a parié sur ce cheval !" %>
+    <% end %>
+  <%= @p4 %> : <%= @zouho4 %>
+</li>
+
+<li>
+
+  <% @results.each do |result| %>
+    <% if @p5 == result[:position] %>
+     <% @zouho5  =  "#{result[:username]} boit #{result[:sip].to_i} gorgée" %>
+     <% end %>
+  <% end %>
+  <% if @zouho5 == "" %>
+      <% @zouho5 = "Heureusement que personne n'a parié sur ce cheval !" %>
+    <% end %>
+  <%= @p5 %> : <%= @zouho5 %>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--     <% @classement.each do |classement| %>
+
+      <% @results.each do |result| %>
+        <% if classement == result[:position] %>
+          <% if result[:position] == 2 %>
+            <% result[:x] = "caca"  %>
+          <% else %>
+            v<% result[:x] = "pipi"  %>
+          <% end %>
+        <% result[:message]  =  "#{result[:username]} x #{result[:x]}" %>
+        <% end %>
+
+<% end %>
+<% end %>
+
+  <% @classement.each do |classement| %>
+    <li> En <%= classement %> position :
+    <% @results.each do |result| %>
+       <% if classement == result[:position]%>
+        <%= result[:message]%>
+        <% end %>
+
+    </li>
+  <% end %> -->
+ <!--  <% end %> -->
+ <!--  <% @results.each do |result| %>
    <li> En Position <%= result[:position] %>
     : <%= result[:username] %>
    <%= result[:x] %> <%= result[:sip].to_i %> gorgée(s)</li>
-  <% end %>
+  <% end %> -->
 
   <div class="d-flex">
     <%= link_to 'Rejouer', room_path(@room), class: "btn btn-primary m-3"  %>

@@ -9,6 +9,18 @@ class RunningsController < ApplicationController
     room_id = @race.room_id
     @room = Room.find(room_id)
     @results = []
+    @classement = [1, 2, 3, 4, 5]
+    @p1 = 1
+    @p2 = 2
+    @p3 = 3
+    @p4 = 4
+    @p5 = 5
+    @zouho1 =""
+    @zouho2 =""
+    @zouho3 =""
+    @zouho4 =""
+    @zouho5 =""
+
 
     @users.each do |user|
       bet = user.bets.find_by(race: @race)
@@ -17,7 +29,7 @@ class RunningsController < ApplicationController
         sip = bet.sip * bet.horse.runnings.find_by(race: @race).rating
         x = "distribue"
       elsif position == 2
-        sip = (bet.sip * bet.horse.runnings.find_by(race: @race).rating) / 2
+        sip = (bet.sip * bet.horse.runnings.find_by(race: @race).rating)
         x = "distribue"
       elsif position == 3
         sip = bet.sip
@@ -35,11 +47,14 @@ class RunningsController < ApplicationController
         username: user.username,
         sip: sip,
         position: position,
-        x: x
+        x: x,
+        message: ''
       }
     end
     @results.sort_by! { |result| result[:position] }
     @race.progress = "closed"
     @race.save
+
+
   end
 end
