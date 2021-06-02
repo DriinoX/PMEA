@@ -1,16 +1,17 @@
 <div class="container">
-  <div class="banner stick" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media1.tenor.com/images/335b53f23a9c756d0dafb7b33cb39480/tenor.gif?itemid=21696967);">
-    <h1 class="text-center"><strong>ET ZÈ PARTIS !!!</strong>!</h1>
-
-    <div class="container">
-      <div align="center">
-        <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
-      </div>
+    <div id="hip" class="hippo" data-un="<%= Running.where(position: 1).last.horse.name %>" date-deux="<%= Running.where(position: 2).last.horse.name %>" date-trois="<%= Running.where(position: 3).last.horse.name %>" date-quatre="<%= Running.where(position: 4).last.horse.name %>" date-cind="<%= Running.where(position: 5).last.horse.name %>">
+      <img id="horse1" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448363/yfp4aolbfntrgy3mk91am64u8osf.png" alt="jockey1">
+      <img id="horse2" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448361/bc01q4le0iu7znz90mmblmn5o0hq.png" alt="jockey2">
+      <img id="horse3" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448359/9hlz5f2py8v3y2flsq50g0c4mtj7.png" alt="jockey3">
+      <img id="horse4" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448357/yj43fy6kppqb61trhgdlr133ymtn.png" alt="jockey4">
+      <img id="horse5" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448355/c925pd31eo7aoyh8ikd2wjy6py4s.png" alt="jockey5">
     </div>
- </div>
+
+    <%= link_to 'VOIR LES RESULTATS', race_runnings_path(@race), class: "btn btn-primary"  %>
+    <button class="btn" id="race"> click </button>
     <h4 id="users" class="text-center ul" data-race=<%="#{@race.id}"%>>
       <% @users.each do |user| %>
         <%= render "races/user", user: user %>
       <% end %>
     </h4>
-</div>
+ </div>
