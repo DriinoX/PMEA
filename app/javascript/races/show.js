@@ -14,17 +14,6 @@ const tetaMaxr =  Math.PI / 2
 const delta = 50;
 
 
-//
-// = queryselector.data-set.un
-
-// const hippo = document.querySelector(".hippo");
-// console.dir(hippo)
-// const un = hippo.dataset.un;
-// console.log(un)
-// const deux = hippo.dataset.deux;
-// console.log(deux)
-//
-
 const definePositions = (a1, b1, a2, b2) => {
   let dx = 1;
   // const dt = dx * Math.PI / (4 * 60 )
@@ -77,28 +66,29 @@ const definePositions = (a1, b1, a2, b2) => {
 }
 
 
-// 5EME
-const cheval1 = document.getElementById("horse1");
-const positions1 = definePositions(10/100, 1, 1/100, 3)
-
-// 4EME
-const cheval2 = document.getElementById("horse2");
-const positions2 = definePositions(9/100, 1, 2/100, 3)
-
-// 3EME
-const cheval3 = document.getElementById("horse3");
-const positions3 = definePositions(8/100, 1, 3/100, 3)
-
-// 2EME
-const cheval4 = document.getElementById("horse4");
-const positions4 = definePositions(7/100, 1, 4/100, 3)
-
-// 1ER
-const cheval5 = document.getElementById("horse5");
-const positions5 = definePositions(8/100, 1, 5/100, 3)
-
-
 function running(i) {
+  const hippo = document.querySelector("#hip");
+
+  // 5EME
+  const cheval1 = document.getElementById(hippo.dataset.cinq);
+  const positions1 = definePositions(10/100, 1, 1/100, 3)
+
+  // 4EME
+  const cheval2 = document.getElementById(hippo.dataset.quatre);
+  const positions2 = definePositions(9/100, 1, 2/100, 3)
+
+  // 3EME
+  const cheval3 = document.getElementById(hippo.dataset.trois);
+  const positions3 = definePositions(8/100, 1, 3/100, 3)
+
+  // 2EME
+  const cheval4 = document.getElementById(hippo.dataset.deux);
+  const positions4 = definePositions(7/100, 1, 4/100, 3)
+
+  // 1ER
+  const cheval5 = document.getElementById(hippo.dataset.un);
+  const positions5 = definePositions(8/100, 1, 5/100, 3)
+
   const position1 = positions1[i]
   cheval1.style.left = `${position1.x}px`
   cheval1.style.top = `${position1.y}px`
@@ -126,57 +116,6 @@ function running(i) {
   }
 }
 
-
-
-// function running(teta) {
-//   const cheval1 = document.getElementById("horse1");
-//   const cheval2 = document.getElementById("horse2");
-//   const cheval3 = document.getElementById("horse3");
-//   const cheval4 = document.getElementById("horse4");
-//   const cheval5 = document.getElementById("horse5");
-//   const chevals = [cheval1, cheval2, cheval3, cheval4, cheval5]
-//   const delta = 50;
-//   let places = ['bot', 'right', 'top', 'left']
-//   let progress = places[0]
-
-//   chevals.forEach((cheval) => {
-//     console.log(cheval)
-
-//     // let flipValueString = window.getComputedStyle(cheval);
-//     // let flipValue = parseInt(flipValueString.transform, 10);
-
-//     let leftValueString = window.getComputedStyle(cheval);
-//     let leftValue = parseInt(leftValueString.left, 10);
-
-//     let topValueString = window.getComputedStyle(cheval);
-//     let topValue = parseInt(topValueString.top, 10);
-
-//     console.log(leftValue)
-//     console.log(topValue)
-//     if ( leftValue >= 50 && topValue > 50 && leftValue <=270 ){
-//       linearBot(cheval, leftValue, delta, teta);
-//     } else if(leftValue >= 250 && topValue <=110){
-//        turnRight(cheval, leftValue, delta, teta);
-//     } else if(leftValue <= 250 && topValue <50){
-//        linearTop(cheval, leftValue, delta, teta);
-//     } else if( leftValue <= 50 && topValue <110 ){
-//        turnLeft(cheval, leftValue, delta, teta);
-//     }
-//   });
-// }
-
-//   // leftValueString = window.getComputedStyle(cheval);
-//   // leftValue = parseInt(leftValueString.left, 10);
-
-//   // if ( leftValue = 250) {
-//   //   cheval.style.transform = "rotateY(180deg)"
-//   // }
-//   // else if ( topValue < 60 ){
-//   //   cheval.style.transform = "rotateY(180deg)"
-//   // }
-
-
-
 const animation = (data) => {
   const btn = document.querySelector('#race');
   if (btn) {
@@ -186,50 +125,5 @@ const animation = (data) => {
   }
 };
 
-// function linearBot(cheval, leftValue, delta, teta){
-//   cheval.style.left = `${leftValue + 10}px`
-//   setTimeout(function(){ running(teta) }, delta);
-// }
-// function linearTop(cheval, leftValue, delta, teta){
-//   cheval.style.left = `${leftValue - 10}px`
-//   setTimeout(function(){ running(teta) }, delta);
-// }
-
-// function turnRight(cheval, leftValue, delta, teta){
-//   teta += 2 * Math.PI * 1/delta;
-//   console.log(teta);
-//   cheval.style.left = `${250 + 60 * Math.cos(teta - Math.PI/3)}px`;
-//   cheval.style.top = `${40 - 60 * Math.sin(teta - Math.PI/3)}px`;
-//   setTimeout(function(){ running(teta) }, delta);
-// }
-
-// function turnLeft(cheval, leftValue, delta, teta){
-//   teta += Math.PI * 1/delta;
-//   console.log(teta);
-//   cheval.style.left = `${40 + 60 * Math.cos(teta + Math.PI/3)}px`;
-//   cheval.style.top = `${40 - 60 * Math.sin(teta + Math.PI/3)}px`;
-//   setTimeout(function(){ running(teta) }, delta);
-// }
-
-
-// // function sleep(milliseconds) {
-// //     const date = Date.now();
-// //     let currentDate = null;
-// //     do {
-// //       currentDate = Date.now();
-// //     } while (currentDate - date < milliseconds);
-// // }
-
-
-// // let topValueString = window.getComputedStyle(cheval);
-//     // console.dir(topValueString)
-//     // let topValue = parseInt(topValueString.top, 10);
-//     // while ( topValue >= 50) {
-//     //   console.log(topValue);
-//     //   cheval.style.top = (topValue - 10) + "px";
-//     //   sleep(500);
-//     //   topValueString = window.getComputedStyle(cheval);
-//     //   topValue = parseInt(topValueString.top, 10);
-//     // }
 
 export { animation }

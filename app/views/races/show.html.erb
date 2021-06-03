@@ -1,10 +1,25 @@
 <div class="container">
-    <div id="hip" class="hippo" data-un="<%= Running.where(position: 1).last.horse.name %>" date-deux="<%= Running.where(position: 2).last.horse.name %>" date-trois="<%= Running.where(position: 3).last.horse.name %>" date-quatre="<%= Running.where(position: 4).last.horse.name %>" date-cind="<%= Running.where(position: 5).last.horse.name %>">
-      <img id="horse1" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448363/yfp4aolbfntrgy3mk91am64u8osf.png" alt="jockey1">
-      <img id="horse2" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448361/bc01q4le0iu7znz90mmblmn5o0hq.png" alt="jockey2">
-      <img id="horse3" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448359/9hlz5f2py8v3y2flsq50g0c4mtj7.png" alt="jockey3">
-      <img id="horse4" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448357/yj43fy6kppqb61trhgdlr133ymtn.png" alt="jockey4">
-      <img id="horse5" src="https://res.cloudinary.com/dekexda28/image/upload/v1622448355/c925pd31eo7aoyh8ikd2wjy6py4s.png" alt="jockey5">
+    <div id="hip" class="hippo" data-un="<%= Running.where(position: 1).last.horse.name %>" data-deux="<%= Running.where(position: 2).last.horse.name %>" data-trois="<%= Running.where(position: 3).last.horse.name %>" data-quatre="<%= Running.where(position: 4).last.horse.name %>" data-cinq="<%= Running.where(position: 5).last.horse.name %>">
+      <%= cl_image_tag Running.where(position: 1).last.horse.photo.key,
+          id: Running.where(position: 1).last.horse.name,
+          alt: "jockey1",
+          style: "top: 110px; left: 62px;" %>
+      <%= cl_image_tag Running.where(position: 2).last.horse.photo.key,
+          id: Running.where(position: 2).last.horse.name,
+          alt: "jockey2",
+          style: "top: 110px; left: 59px;" %>
+      <%= cl_image_tag Running.where(position: 3).last.horse.photo.key,
+          id: Running.where(position: 3).last.horse.name,
+          alt: "jockey3",
+          style: "top: 110px; left: 56px;" %>
+      <%= cl_image_tag Running.where(position: 4).last.horse.photo.key,
+          id: Running.where(position: 4).last.horse.name,
+          alt: "jockey4",
+          style: "top: 110px; left: 53px;" %>
+      <%= cl_image_tag Running.where(position: 5).last.horse.photo.key,
+          id: Running.where(position: 5).last.horse.name,
+          alt: "jockey5",
+          style: "top: 110px; left: 50px;" %>
     </div>
     <% if @room.user == current_user %>
       <div class="d-flex justify-content-center">

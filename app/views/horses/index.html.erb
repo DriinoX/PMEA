@@ -8,7 +8,7 @@
         <div class="card-product" data-toggle="modal" data-target="#horse-<%= horse.id %>">
           <%= cl_image_tag horse.photo.key, width: 200, height: 170, crop: :scale %>
           <div class="card-product-infos">
-            <h2> <%= horse.name %> </h2>
+            <h3> <%= horse.name %> </h3>
             <p><%= horse.description%> <strong> Cote : <%= horse.runnings.last.rating %></strong></p>
           </div>
         </div>
