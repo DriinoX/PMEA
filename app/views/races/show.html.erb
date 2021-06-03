@@ -22,11 +22,6 @@
           alt: "jockey5",
           style: "top: 110px; left: 50px;" %>
     </div>
-    <% if @room.user == current_user %>
-      <div class="d-flex justify-content-center">
-        <button class="btn btn-info mt-3" id="race"> Lancer la course </button>
-      </div>
-    <% end %>
     <h3 id="mise-title" class="text-center mt-3"> Les mises :</h3>
     <h4 id="users" class="text-center ul mt-3" data-race=<%="#{@race.id}"%>>
       <% @users.each do |user| %>

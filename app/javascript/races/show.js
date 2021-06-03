@@ -67,7 +67,10 @@ const definePositions = (a1, b1, a2, b2) => {
 
 
 function running(i) {
+
   const hippo = document.querySelector("#hip");
+
+  if (hippo) {
 
   // 5EME
   const cheval1 = document.getElementById(hippo.dataset.cinq);
@@ -108,7 +111,7 @@ function running(i) {
   const position5 = positions5[i]
   cheval5.style.left = `${position5.x}px`
   cheval5.style.top = `${position5.y}px`
-
+  }
 
   i += 1;
   if (positions1.length - 1 > i ) {
