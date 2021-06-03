@@ -74,23 +74,23 @@ function running(i) {
 
   // 5EME
     const cheval1 = document.getElementById(hippo.dataset.cinq);
-    const positions1 = definePositions(10/100, 1, 1/100, 3)
+    const positions1 = definePositions(10/400, 1, 1/400, 3)
 
     // 4EME
     const cheval2 = document.getElementById(hippo.dataset.quatre);
-    const positions2 = definePositions(9/100, 1, 2/100, 3)
+    const positions2 = definePositions(9/400, 1, 2/400, 3)
 
     // 3EME
     const cheval3 = document.getElementById(hippo.dataset.trois);
-    const positions3 = definePositions(8/100, 1, 3/100, 3)
+    const positions3 = definePositions(8/400, 1, 3/400, 3)
 
     // 2EME
     const cheval4 = document.getElementById(hippo.dataset.deux);
-    const positions4 = definePositions(7/100, 1, 4/100, 3)
+    const positions4 = definePositions(7/400, 1, 4/400, 3)
 
     // 1ER
     const cheval5 = document.getElementById(hippo.dataset.un);
-    const positions5 = definePositions(8/100, 1, 5/100, 3)
+    const positions5 = definePositions(8/400, 1, 5/400, 3)
 
     const position1 = positions1[i]
     cheval1.style.left = `${position1.x}px`
