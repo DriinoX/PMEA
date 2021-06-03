@@ -74,11 +74,11 @@ function running(i) {
 
   // 5EME
     const cheval1 = document.getElementById(hippo.dataset.cinq);
-    const positions1 = definePositions(10/400, 1, 1/400, 3)
+    const positions1 = definePositions(7/400, 1, 4/400, 3)
 
     // 4EME
     const cheval2 = document.getElementById(hippo.dataset.quatre);
-    const positions2 = definePositions(9/400, 1, 2/400, 3)
+    const positions2 = definePositions(10/400, 1, 1/400, 3)
 
     // 3EME
     const cheval3 = document.getElementById(hippo.dataset.trois);
@@ -86,7 +86,7 @@ function running(i) {
 
     // 2EME
     const cheval4 = document.getElementById(hippo.dataset.deux);
-    const positions4 = definePositions(7/400, 1, 4/400, 3)
+    const positions4 = definePositions(9/400, 1, 2/400, 3)
 
     // 1ER
     const cheval5 = document.getElementById(hippo.dataset.un);

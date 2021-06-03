@@ -1,6 +1,14 @@
 <div class="container">
   <div id="usercont" class="d-none" data-participationscount="<%= @participations %>"></div>
     <div id="hip" class="hippo" data-un="<%= Running.where(position: 1).last.horse.name %>" data-deux="<%= Running.where(position: 2).last.horse.name %>" data-trois="<%= Running.where(position: 3).last.horse.name %>" data-quatre="<%= Running.where(position: 4).last.horse.name %>" data-cinq="<%= Running.where(position: 5).last.horse.name %>">
+      <%= cl_image_tag Running.where(position: 4).last.horse.photo.key,
+          id: Running.where(position: 4).last.horse.name,
+          alt: "jockey4",
+          style: "top: 110px; left: 68px;" %>
+      <%= cl_image_tag Running.where(position: 5).last.horse.photo.key,
+          id: Running.where(position: 5).last.horse.name,
+          alt: "jockey5",
+          style: "top: 110px; left: 65px;" %>
       <%= cl_image_tag Running.where(position: 1).last.horse.photo.key,
           id: Running.where(position: 1).last.horse.name,
           alt: "jockey1",
@@ -13,14 +21,6 @@
           id: Running.where(position: 3).last.horse.name,
           alt: "jockey3",
           style: "top: 110px; left: 56px;" %>
-      <%= cl_image_tag Running.where(position: 4).last.horse.photo.key,
-          id: Running.where(position: 4).last.horse.name,
-          alt: "jockey4",
-          style: "top: 110px; left: 53px;" %>
-      <%= cl_image_tag Running.where(position: 5).last.horse.photo.key,
-          id: Running.where(position: 5).last.horse.name,
-          alt: "jockey5",
-          style: "top: 110px; left: 50px;" %>
     </div>
     <h3 id="mise-title" class="text-center mt-3"> Les mises :</h3>
     <h4 id="users" class="text-center ul mt-3" data-race=<%="#{@race.id}"%>>
