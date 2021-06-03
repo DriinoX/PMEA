@@ -117,11 +117,9 @@ function running(i) {
 }
 
 const animation = (data) => {
-  const btn = document.querySelector('#race');
-  if (btn) {
-    btn.addEventListener("click", (event) => {
-      running(0)
-    });
+  const hip = document.querySelector('#hip');
+  if (hip) {
+    running(0)
   }
 };
 

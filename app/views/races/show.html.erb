@@ -1,4 +1,5 @@
 <div class="container">
+  <div id="usercont" class="d-none" data-participationscount="<%= @participations %>"></div>
     <div id="hip" class="hippo" data-un="<%= Running.where(position: 1).last.horse.name %>" data-deux="<%= Running.where(position: 2).last.horse.name %>" data-trois="<%= Running.where(position: 3).last.horse.name %>" data-quatre="<%= Running.where(position: 4).last.horse.name %>" data-cinq="<%= Running.where(position: 5).last.horse.name %>">
       <%= cl_image_tag Running.where(position: 1).last.horse.photo.key,
           id: Running.where(position: 1).last.horse.name,

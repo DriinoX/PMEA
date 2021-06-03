@@ -75,9 +75,20 @@ replay()
 
 // window.location.reload();
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  animation();
+
+const contusers = document.querySelector("#usercont");
+  const interval = setInterval(function(){
+    if (contusers) {
+      const nbruser = contusers.dataset.participationscount;
+      const lis = document.querySelectorAll('li')
+      const reallis = lis.length - 2
+      if (nbruser == reallis) {
+        animation()
+        clearInterval(interval)
+      }
+    }
+  }, 4000);
+
   initRoomCable();
   initRaceCable();
 });

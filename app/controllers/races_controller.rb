@@ -11,5 +11,6 @@ class RacesController < ApplicationController
     @room = @race.room
     @runnings = @race.runnings
     @users = @race.room.users.select { |user| user.bet_for(@race).present? }
+    @participations = @race.room.participations.length
   end
 end
