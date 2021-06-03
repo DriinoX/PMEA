@@ -73,50 +73,51 @@ function running(i) {
   if (hippo) {
 
   // 5EME
-  const cheval1 = document.getElementById(hippo.dataset.cinq);
-  const positions1 = definePositions(10/100, 1, 1/100, 3)
+    const cheval1 = document.getElementById(hippo.dataset.cinq);
+    const positions1 = definePositions(10/100, 1, 1/100, 3)
 
-  // 4EME
-  const cheval2 = document.getElementById(hippo.dataset.quatre);
-  const positions2 = definePositions(9/100, 1, 2/100, 3)
+    // 4EME
+    const cheval2 = document.getElementById(hippo.dataset.quatre);
+    const positions2 = definePositions(9/100, 1, 2/100, 3)
 
-  // 3EME
-  const cheval3 = document.getElementById(hippo.dataset.trois);
-  const positions3 = definePositions(8/100, 1, 3/100, 3)
+    // 3EME
+    const cheval3 = document.getElementById(hippo.dataset.trois);
+    const positions3 = definePositions(8/100, 1, 3/100, 3)
 
-  // 2EME
-  const cheval4 = document.getElementById(hippo.dataset.deux);
-  const positions4 = definePositions(7/100, 1, 4/100, 3)
+    // 2EME
+    const cheval4 = document.getElementById(hippo.dataset.deux);
+    const positions4 = definePositions(7/100, 1, 4/100, 3)
 
-  // 1ER
-  const cheval5 = document.getElementById(hippo.dataset.un);
-  const positions5 = definePositions(8/100, 1, 5/100, 3)
+    // 1ER
+    const cheval5 = document.getElementById(hippo.dataset.un);
+    const positions5 = definePositions(8/100, 1, 5/100, 3)
 
-  const position1 = positions1[i]
-  cheval1.style.left = `${position1.x}px`
-  cheval1.style.top = `${position1.y}px`
+    const position1 = positions1[i]
+    cheval1.style.left = `${position1.x}px`
+    cheval1.style.top = `${position1.y}px`
 
-  const position2 = positions2[i]
-  cheval2.style.left = `${position2.x}px`
-  cheval2.style.top = `${position2.y}px`
+    const position2 = positions2[i]
+    cheval2.style.left = `${position2.x}px`
+    cheval2.style.top = `${position2.y}px`
 
-  const position3 = positions3[i]
-  cheval3.style.left = `${position3.x}px`
-  cheval3.style.top = `${position3.y}px`
+    const position3 = positions3[i]
+    cheval3.style.left = `${position3.x}px`
+    cheval3.style.top = `${position3.y}px`
 
-  const position4 = positions4[i]
-  cheval4.style.left = `${position4.x}px`
-  cheval4.style.top = `${position4.y}px`
+    const position4 = positions4[i]
+    cheval4.style.left = `${position4.x}px`
+    cheval4.style.top = `${position4.y}px`
 
-  const position5 = positions5[i]
-  cheval5.style.left = `${position5.x}px`
-  cheval5.style.top = `${position5.y}px`
+    const position5 = positions5[i]
+    cheval5.style.left = `${position5.x}px`
+    cheval5.style.top = `${position5.y}px`
+
+    i += 1;
+    if (positions1.length - 1 > i ) {
+      setTimeout(function(){ running(i) }, delta);
+    }
   }
 
-  i += 1;
-  if (positions1.length - 1 > i ) {
-    setTimeout(function(){ running(i) }, delta);
-  }
 }
 
 const animation = (data) => {
