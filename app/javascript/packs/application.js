@@ -6,8 +6,9 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
+require("bootstrap")
 require("channels")
-require("races/show.js")
+require("../races/show.js")
 
 
 
@@ -25,17 +26,15 @@ require("races/show.js")
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
+// import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { animation } from '../races/show.js';
 
 import { initRoomCable } from '../channels/room_channel';
 
-import { initRaceCable } from '../channels/race_channel';
-
 import {refreshh} from '../rooms/show.js';
+
 
 
 
@@ -60,18 +59,6 @@ function replay() {
 
 replay()
 
-  // fetch(url)
-  // {
-  //  if (data['refresh'] === 'true') {
-  //   window.location.reload();
-  //  }
-  // }
-
-  // };
-
-
-  // refreshh();
-
 
 // window.location.reload();
 document.addEventListener('turbolinks:load', () => {
@@ -92,3 +79,8 @@ const contusers = document.querySelector("#usercont");
   initRoomCable();
   initRaceCable();
 });
+
+
+import { initRaceCable } from '../channels/race_channel';
+
+import { animation } from '../races/show.js';
